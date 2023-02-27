@@ -14,15 +14,13 @@ return new class extends Migration
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title', 75);
             $table->string('thumb', 255);
             $table->string('slug', 100);
             $table->tinyText('summary');
             $table->text('content');
-            $table->tinyInteger('status');
+            $table->boolean('status')->default(1);   // 1 là riêng tư , 2 là đang chờ, 3 là công khai
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

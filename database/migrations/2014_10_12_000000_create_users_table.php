@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('password', 255);
             $table->string('avatar', 255)->nullable();
             $table->string('token_verify', 60)->nullable();
-            $table->boolean('role')->default(1);   // 1 là admin , 2 là user
+            $table->boolean('role')->default(1)->comment('1 là admin , 2 là user');  
             $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();

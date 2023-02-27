@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('slug', 100);
             $table->tinyText('summary');
             $table->text('content');
-            $table->boolean('status')->default(1);   // 1 là riêng tư , 2 là đang chờ, 3 là công khai
+            $table->boolean('status')->default(1)->comment('1 là riêng tư , 2 là đang chờ, 3 là công khai');
             $table->unsignedBigInteger('category_id');
             $table->timestamps();
         });

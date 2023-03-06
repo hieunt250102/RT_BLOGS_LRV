@@ -13,13 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('/')->group(function () {
-    Route::get('/', function () {
-        return view('client.index');
-    });
-    Route::get('/create', function () {
-        return view('client.create-blog');
-    });
+Route::prefix('auth')->group(function () {
     Route::get('/sign-in', function () {
         return view('client.sign-in');
     });
@@ -32,10 +26,19 @@ Route::prefix('/')->group(function () {
     Route::get('/reset-password', function () {
         return view('client.reset-password');
     });
-    Route::get('/my-blogs', function () {
+});
+
+Route::prefix('blogs')->group(function () {
+    Route::get('/', function () {
+        return view('client.index');
+    });
+    Route::get('/create', function () {
+        return view('client.create-blog');
+    });
+    Route::get('/me', function () {
         return view('client.my-blogs');
     });
-    Route::get('/blog/{id}', function () {
+    Route::get('/{id}', function () {
         return view('client.blog-detail');
     });
 });

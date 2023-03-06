@@ -84,7 +84,7 @@
         </div>
     </div>
 </div>
-<div id="myModal" class="modal" style="display: block;">
+<div id="myModal" class="modal">
     <!-- Modal content -->
     <div class="modal-content">
         <div class="modal-header">

@@ -4,7 +4,7 @@
 <div class="container content">
     <div class="content__header">
         <div class="content__header--title">
-            <h1>{{ trans('index.title-my-blogs') }}</h1>
+            <h1>{{ __('title.title.my_blogs') }}</h1>
         </div>
         <select class="content__header--filter">
             <option value="">Category</option>
@@ -42,7 +42,7 @@
                     hulanjfh bfueodap fiefhief...
                 </p>
                 <div class="post__content--footer">
-                    <button class="post__content--btn">{{ trans('index.read-more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                    <button class="post__content--btn">{{ __('button.btn.read_more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg></button>
                 </div>
@@ -77,7 +77,7 @@
                     hulanjfh bfueodap fiefhief...
                 </p>
                 <div class="post__content--footer">
-                    <button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                    <button class="post__content--btn">{{ __('button.btn.read_more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg></button>
                 </div>
@@ -112,7 +112,7 @@
                     hulanjfh bfueodap fiefhief...
                 </p>
                 <div class="post__content--footer">
-                    <button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                    <button class="post__content--btn">{{ __('button.btn.read_more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg></button>
                 </div>
@@ -147,7 +147,7 @@
                     hulanjfh bfueodap fiefhief...
                 </p>
                 <div class="post__content--footer">
-                    <button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                    <button class="post__content--btn">{{ __('button.btn.read_more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg></button>
                 </div>
@@ -182,7 +182,7 @@
                     hulanjfh bfueodap fiefhief...
                 </p>
                 <div class="post__content--footer">
-                    <button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                    <button class="post__content--btn">{{ __('button.btn.read_more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg></button>
                 </div>
@@ -217,7 +217,7 @@
                     hulanjfh bfueodap fiefhief...
                 </p>
                 <div class="post__content--footer">
-                    <button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                    <button class="post__content--btn">{{ __('button.btn.read_more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg></button>
                 </div>
@@ -252,7 +252,7 @@
                     hulanjfh bfueodap fiefhief...
                 </p>
                 <div class="post__content--footer">
-                    <button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                    <button class="post__content--btn">{{ __('button.btn.read_more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg></button>
                 </div>
@@ -287,7 +287,7 @@
                     hulanjfh bfueodap fiefhief...
                 </p>
                 <div class="post__content--footer">
-                    <button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                    <button class="post__content--btn">{{ __('button.btn.read_more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg></button>
                 </div>
@@ -322,7 +322,7 @@
                     hulanjfh bfueodap fiefhief...
                 </p>
                 <div class="post__content--footer">
-                    <button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                    <button class="post__content--btn">{{ __('button.btn.read_more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                         </svg></button>
                 </div>

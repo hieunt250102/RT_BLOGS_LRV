@@ -14,26 +14,26 @@
     <div class="wrapper-form">
         <div class="container">
             <div class="logo">
-                <a href="/"><img src="{{asset('images/logo.png')}}" alt=""></a>
-                <a href="/">
+                <a href="{{ route('blogs.index')}}"><img src="{{asset('images/logo.png')}}" alt=""></a>
+                <a href="{{ route('blogs.index')}}">
                     <h1>RT-Blogs</h1>
                 </a>
             </div>
 
-            <h2 class="sign-in-title">{{ trans('reset-password.title') }}</h2>
+            <h2 class="sign-in-title">{{ __('title.title.reset') }}</h2>
             <form action="">
                 <div class="form-group">
-                    <label for="password">{{ trans('reset-password.title-field.new') }}<span class="req">*</span></label>
+                    <label for="password">{{ __('title-field.new') }}<span class="req">*</span></label>
                     <input required type="password" id="password" name="password">
                     <div class="feed-back is-invalid">Error: password cannot be null</div>
                 </div>
                 <div class="form-group">
-                    <label for="password">{{ trans('reset-password.title-field.confirm') }}<span class="req">*</span></label>
+                    <label for="password">{{ __('title-field.confirm') }}<span class="req">*</span></label>
                     <input required type="password" id="password" name="password">
                     <div class="feed-back is-invalid">Error: password cannot be null</div>
                 </div>
                 <div class="form-footer">
-                    <button>{{ trans('reset-password.btn-submit') }}</button>
+                    <button>{{ __('button.btn.submit_reset') }}</button>
                 </div>
             </form>
         </div>

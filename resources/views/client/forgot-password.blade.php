@@ -14,21 +14,21 @@
     <div class="wrapper-form">
         <div class="container">
             <div class="logo">
-                <a href="/"><img src="{{asset('images/logo.png')}}" alt=""></a>
-                <a href="/">
+                <a href="{{route('blogs.index')}}"><img src="{{asset('images/logo.png')}}" alt=""></a>
+                <a href="{{route('blogs.index')}}">
                     <h1>RT-Blogs</h1>
                 </a>
             </div>
 
-            <h2>{{ trans('forgot-password.title') }}</h2>
+            <h2>{{ __('title.title.forgot') }}</h2>
             <form action="">
                 <div class="form-group">
-                    <label for="email">{{ trans('forgot-password.email-field') }} <span class="req">*</span></label>
+                    <label for="email">{{ __('title-field.email') }} <span class="req">*</span></label>
                     <input required type="email" id="email" name="email">
                     <div class="feed-back">Error: password cannot be null</div>
                 </div>
                 <div class="form-footer">
-                    <button>{{ trans('forgot-password.btn-submit') }}</button>
+                    <button>{{ __('button.btn.submit_forgot') }}</button>
                 </div>
             </form>
         </div>

@@ -14,32 +14,32 @@
     <div class="wrapper-form">
         <div class="container">
             <div class="logo">
-                <a href="/"><img src="{{asset('images/logo.png')}}" alt=""></a>
-                <a href="/">
+                <a href="{{ route('blogs.index')}}"><img src="{{asset('images/logo.png')}}" alt=""></a>
+                <a href="{{ route('blogs.index')}}">
                     <h1>RT-Blogs</h1>
                 </a>
             </div>
 
-            <h2 class="sign-in-title">{{ trans('sign-up.title') }}</h2>
+            <h2 class="sign-in-title">{{ __('title.title.signup') }}</h2>
             <form action="">
                 <div class="form-group">
-                    <label for="email">{{ trans('sign-up.title-field.username-email') }} <span class="req">*</span></label>
+                    <label for="email">{{ __('title-field.email') }} <span class="req">*</span></label>
                     <input required type="email" id="email" name="email">
                     <div class="feed-back">Error: password cannot be null</div>
                 </div>
                 <div class="form-group">
-                    <label for="password">{{ trans('sign-up.title-field.password') }}<span class="req">*</span></label>
+                    <label for="password">{{ __('title-field.password') }}<span class="req">*</span></label>
                     <input required type="password" id="password" name="password">
                     <div class="feed-back is-invalid">Error: password cannot be null</div>
                 </div>
                 <div class="form-group">
-                    <label for="password">{{ trans('sign-up.title-field.confirm') }}<span class="req">*</span></label>
+                    <label for="password">{{ __('title-field.confirm') }}<span class="req">*</span></label>
                     <input required type="password" id="password" name="confirm_password">
                     <div class="feed-back is-invalid">Error: password cannot be null</div>
                 </div>
                 <div class="form-footer">
-                    <button>{{ trans('sign-up.btn-submit') }}</button>
-                    <a href="/sign-in" class="register_link">{{ trans('sign-up.nav-sign-in') }}</a>
+                    <button>{{ __('button.btn.submit_signup') }}</button>
+                    <a href="{{route('sign-in')}}" class="register_link">{{ __('button.btn.nav_signin') }}</a>
                 </div>
             </form>
         </div>

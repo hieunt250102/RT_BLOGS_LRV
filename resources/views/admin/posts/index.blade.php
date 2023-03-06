@@ -13,22 +13,22 @@
                                 ID
                             </th>
                             <th>
-                                Author
+                                {{ __('title.title.table.avatar') }}
                             </th>
                             <th>
-                                Name
+                            {{ __('title.title.table.name') }}
                             </th>
                             <th>
-                                Title post
+                            {{ __('title.title.table.title_blog') }}
                             </th>
                             <th>
-                                Date
+                            {{ __('title.title.table.date_blog') }}
                             </th>
                             <th>
-                                Status
+                            {{ __('title.title.table.status') }}
                             </th>
                             <th colspan="2">
-                                Option
+                            {{ __('title.title.table.option') }}
                             </th>
                         </tr>
                     </thead>

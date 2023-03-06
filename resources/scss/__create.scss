@@ -1,0 +1,95 @@
+.container-create {
+    background-color: #D9D9D9;
+    padding: 30px;
+    margin-top: 34px;
+
+    h2 {
+        margin-bottom: 16px;
+    }
+}
+
+.form-create {
+    width: 100%;
+}
+
+.label {
+    display: block;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #212121;
+    margin-bottom: 10px;
+}
+
+select,
+option {
+    @include size(334px, 40px);
+    background: #FFFFFF;
+    border: 1px solid #DEDEDE;
+    border-radius: 4px;
+    color: rgba(222, 222, 222, 1);
+    padding: 10px;
+    outline: none;
+}
+
+select {
+    margin-bottom: 16px;
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile+label {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    color: #87B6E7;
+    display: inline-block;
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid #007BFF;
+    border-radius: 4px;
+    padding: 8px 15px;
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+    background: #007BFF;
+    color: #FFFFFF;
+}
+
+.preview-image {
+    @include size(269px, 170px);
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #DEDEDE;
+    border-radius: 4px;
+    outline: none;
+    padding: 19px;
+    height: 459px;
+}
+
+.btn-create-blog {
+    cursor: pointer;
+    background: #FFFFFF;
+    border: 1px solid #007BFF;
+    border-radius: 4px;
+    padding: 8px 15px;
+    color: #87B6E7;
+    margin-top: 15px;
+
+    &:hover {
+        background: #007BFF;
+        color: #FFFFFF;
+    }
+}

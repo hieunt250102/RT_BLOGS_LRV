@@ -1,0 +1,63 @@
+@import './_reset';
+
+@font-face {
+    font-family: "SVN-Gilroy";
+    src: url("./../../public/frontend/fonts/SVN-GilroyBold.eot");
+    src: url("./../../public/frontend/fonts/SVN-GilroyBold.eot?#iefix") format("embedded-opentype"),
+        url("./../../public/frontend/fonts/SVN-GilroyBold.woff2") format("woff2"),
+        url("./../../public/frontend/fonts/SVN-GilroyBold.woff") format("woff"),
+        url("./../../public/frontend/fonts/SVN-GilroyBold.ttf") format("truetype"),
+        url("./../../public/frontend/fonts/SVN-GilroyBold.svg#SVN-GilroyBold") format("svg");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SVN-Gilroy";
+    src: url("./../../public/frontend/fonts/SVN-GilroyLight.eot");
+    src: url("./../../public/frontend/fonts/SVN-GilroyLight.eot?#iefix") format("embedded-opentype"),
+        url("./../../public/frontend/fonts/SVN-GilroyLight.woff2") format("woff2"),
+        url("./../../public/frontend/fonts/SVN-GilroyLight.woff") format("woff"),
+        url("./../../public/frontend/fonts/SVN-GilroyLight.ttf") format("truetype"),
+        url("./../../public/frontend/fonts/SVN-GilroyLight.svg#SVN-GilroyLight") format("svg");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@mixin flex($align, $justify, $wrap) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-wrap: $wrap;
+}
+
+@mixin size($width, $height) {
+    height: $height;
+    width: $width;
+}
+
+@mixin backgroundImage($url, $repeat, $size, $position) {
+    background-image: $url;
+    background-repeat: $repeat;
+    background-size: $size;
+    background-position: $position;
+}
+
+body {
+    margin-top: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.wrapper {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}

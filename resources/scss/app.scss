@@ -1,0 +1,352 @@
+@import './_global';
+@import "./_header";
+@import './_responsive';
+@import "./_footer";
+@import "./_register";
+@import "./_create";
+@import "./_detail";
+
+.banner {
+    @include backgroundImage(url("/images/banner.png"), no-repeat, cover, center);
+    height: 519px;
+}
+
+main {
+    margin-top: 155px;
+}
+
+.content {
+    &__header {
+        margin: 50px 0 38px;
+        @include flex(center, space-between, "");
+
+        &--title {
+            h1 {
+                color: #000;
+                font-size: 50px;
+                font-weight: 700;
+                line-height: 72.4px;
+            }
+        }
+
+        select {
+            padding: 7px 60px 7px 5px;
+            box-sizing: border-box;
+            width: 144px;
+            height: 40px;
+            background: #FFFFFF;
+            border: 1px solid #DEDEDE;
+            border-radius: 4px;
+        }
+
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 70px;
+        column-gap: 30px;
+        margin-bottom: 50px;
+
+        &--post {
+            border: 1px solid #cccccc;
+            overflow: hidden;
+            border-radius: 8px;
+
+            img {
+                @include size(100%, 276px);
+                object-fit: cover;
+            }
+        }
+    }
+
+    .post {
+        &__content {
+            padding: 20px;
+
+            &--infor {
+                @include flex(center, "", "");
+                gap: 30px;
+                margin-bottom: 15px;
+            }
+
+            &--group {
+                gap: 6px;
+                @include flex(center, "", "");
+            }
+
+            &--author {
+                font-family: "SVN-Gilroy";
+                font-style: normal;
+                font-weight: 400;
+                font-size: 18px;
+                color: #211E3B;
+                text-overflow: ellipsis;
+            }
+
+            &--icon {
+                @include size(20px, 20px);
+            }
+
+            &--title {
+                font-family: "SVN-Gilroy";
+                font-weight: 700;
+                font-size: 18px;
+                margin-bottom: 10px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-style: normal;
+            }
+
+            &--summary {
+                font-family: "SVN-Gilroy";
+                font-style: normal;
+                font-size: 17px;
+                margin-bottom: 29px;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &--footer {
+                position: relative;
+                margin-bottom: 10px;
+                display: flex;
+            }
+
+            &--btn {
+                display: flex;
+                background: #FFFFFF;
+                border: 1px solid #E4E4E4;
+                border-radius: 4px;
+                color: rgb(196, 0, 0);
+                font-size: 14px;
+                font-weight: 400;
+                cursor: pointer;
+                padding: 12px 10px 10px 10px;
+                gap: 10px;
+
+                svg {
+                    display: block;
+                    width: 18px;
+                    color: rgba(196, 0, 0, 1);
+                }
+
+                &:hover {
+                    background-color: rgb(196, 0, 0);
+                    color: #fff;
+
+                    svg {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.pagination {
+    @include flex(center, center, wrap);
+
+    a,
+    span {
+        border-radius: 50%;
+        color: rgba(33, 30, 59, 1);
+        @include flex(center, center, "");
+        font-size: 20px;
+        margin: 0 5px 5px;
+        min-width: 20px;
+        padding: 0 14px;
+        height: 40px;
+        text-decoration: none;
+        position: relative;
+        font-weight: 700;
+        font-family: "SVN-Gilroy";
+
+        &:hover {
+            background-color: rgba(255, 228, 228, 1);
+            color: rgba(196, 0, 0, 1);
+        }
+    }
+
+    i {
+        color: #fff;
+    }
+
+    &__btn {
+
+        &--previous,
+        &--next {
+            background: #E5E5E5;
+            border-radius: 50%;
+
+            &:hover {
+                background-color: rgb(196, 0, 0) !important;
+            }
+        }
+    }
+
+    .page-active {
+        background-color: rgba(255, 228, 228, 1);
+        color: rgba(196, 0, 0, 1);
+    }
+}
+
+@media screen and (max-width: 769px) {
+    .header {
+        height: 385px;
+
+        &-nav {
+            display: none;
+        }
+
+        &-menu {
+            display: block;
+        }
+    }
+
+    .content {
+        &__grid {
+            grid-template-columns: repeat(1, 1fr);
+            row-gap: 70px;
+            column-gap: 0;
+        }
+
+        &__header {
+            &--title {
+                h1 {
+                    color: #000;
+                    font-size: 30px;
+                    font-weight: 700;
+                    line-height: 72.4px;
+                }
+            }
+
+            select {
+                padding: 7px 60px 7px 5px;
+            }
+        }
+    }
+
+    .pagination {
+        flex-wrap: nowrap;
+
+        a,
+        span {
+            font-size: 15px;
+            margin: 0;
+            padding: 0 16px;
+        }
+    }
+
+    .list-related-blog {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 70px;
+        column-gap: 0;
+    }
+
+    footer {
+        margin-top: 100px;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width:920px) {
+    .header {
+        .logo {
+            &__image {
+                width: 41px;
+                height: 41px;
+            }
+
+            &__name {
+                font-size: 15px;
+            }
+        }
+
+        .nav {
+            &__search {
+                height: 45px;
+                width: 374px;
+                position: relative;
+
+                input {
+                    margin-top: 10px;
+                    width: 70%;
+                    height: 70%;
+                    border: 1px solid #d4d4d4;
+                    border-radius: 4px;
+                    padding: 11px 50px 13px 20px;
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 22px;
+                }
+
+                &--icon {
+                    position: absolute;
+                    left: 60%;
+                    top: 50%;
+                    bottom: 50%;
+                    transform: translate(-50%, -50%);
+                    color: #d4d4d4;
+                    cursor: pointer;
+                    height: 19px;
+                    width: 19px;
+                }
+            }
+
+            &__option {
+                &--btn {
+
+                    &-top,
+                    &-create {
+                        font-size: 12px;
+                    }
+                }
+
+                &--user {
+                    &-name {
+                        font-size: 12px;
+                    }
+
+                    &-avatar {
+                        @include size(25px, 25px);
+                    }
+                }
+            }
+        }
+    }
+
+    .content {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: 70px;
+            gap: 20px;
+        }
+
+        &__header {
+            h1 {
+                font-size: 30px;
+            }
+
+            select {
+                padding: 7px 60px 7px 5px;
+            }
+        }
+    }
+
+    .list-related-blog {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 70px;
+        gap: 20px;
+    }
+
+    footer {
+        margin-top: 100px;
+    }
+}

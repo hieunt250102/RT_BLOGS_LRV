@@ -1,0 +1,130 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 75px;
+
+    img {
+        @include size(60px, 60px);
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 29px;
+        color: #000000;
+    }
+
+}
+
+.wrapper-form {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.sign-in-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    color: #212121;
+    margin-bottom: 16px;
+}
+
+form {
+    width: 471px;
+}
+
+.form-group {
+    margin-top: 24px;
+}
+
+label {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #212121;
+    margin-bottom: 10px;
+}
+
+.req {
+    color: red;
+}
+
+input[type=email],
+input[type=password], input[type=text] {
+    @include size(100%, 40px);
+    background: #FFFFFF;
+    border: 1px solid #DEDEDE;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    padding: 10px;
+}
+
+.is-invalid {
+    border-color: #d10000;
+}
+
+.feed-back {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #D10000;
+}
+
+.user-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+
+    &__remmember {
+        display: flex;
+        align-items: center;
+
+        input[type=checkbox] {
+            border: 1.5px solid #292D32;
+            @include size(18px, 18px);
+            margin-right: 10px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 22px;
+            color: #212121;
+        }
+    }
+
+    &__forgot {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #007BFF;
+    }
+}
+
+.form-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+
+    button {
+        display: block;
+        background: #007BFF;
+        border: 1px solid #007BFF;
+        border-radius: 4px;
+        padding: 8px 119px;
+        color: #FFFFFF;
+        margin-bottom: 16px;
+    }
+
+    a {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #007BFF;
+    }
+}

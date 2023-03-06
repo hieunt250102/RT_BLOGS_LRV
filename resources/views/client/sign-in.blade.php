@@ -20,30 +20,30 @@
                 </a>
             </div>
 
-            <h2>Sign in</h2>
+            <h2>{{ trans('sign-in.title') }}</h2>
             <form action="">
                 <div class="form-group">
-                    <label for="email">User name or email <span class="req">*</span></label>
+                    <label for="email">{{ trans('sign-in.title-field.username-email') }} <span class="req">*</span></label>
                     <input required type="email" id="email" name="email">
                     <div class="feed-back">Error: password cannot be null</div>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password<span class="req">*</span></label>
+                    <label for="password">{{ trans('sign-in.title-field.password') }}<span class="req">*</span></label>
                     <input required type="password" id="password" name="password">
                     <div class="feed-back is-invalid">Error: password cannot be null</div>
                 </div>
                 <div class="user-option">
                     <div class="user-option__remmember">
                         <input type="checkbox" name="remmember" id="remmember">
-                        <p>Remmember password</p>
+                        <p>{{ trans('sign-in.title-field.remmember') }}</p>
                     </div>
                     <a href="/forgot-password" class="user-option__forgot">
-                        Forgot your password?
+                        {{ trans('sign-in.title-field.forgot') }}
                     </a>
                 </div>
                 <div class="form-footer">
-                    <button>Login</button>
-                    <a href="/sign-up">Don’t have an account? Sign up here</a>
+                    <button>{{ trans('sign-in.btn-submit') }}</button>
+                    <a href="/sign-up">{{ trans('sign-in.nav-sign-up') }}</a>
                 </div>
             </form>
         </div>

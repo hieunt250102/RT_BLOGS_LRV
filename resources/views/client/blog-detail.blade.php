@@ -5,7 +5,7 @@
     <div class="container-detail">
         <div class="content-detail">
             <div class="breadcrumb">
-                <span>Home</span> > <b>Details blogs</b>
+                <span>{{ trans('breadcrumb.home') }}</span> > <b>{{ trans('breadcrumb.detail') }}</b>
             </div>
             <h2 class="title-blog">My cat is like the boss</h2>
             <div class="infor-blog">
@@ -21,7 +21,7 @@
                 <div class="author-option">
                     <!-- <button class="blog-status-not-approved">Not approved</button> -->
                     <button class="blog-status-approved">Approved</button>
-                    <button class="btn-delete" id="myBtn">Delete Blog</button>
+                    <button class="btn-delete" id="myBtn">{{ trans('detail.btn-delete') }}</button>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@
             </div>
 
             <div class="related-blog">
-                <h2 class="title-related-blog">Related</h2>
+                <h2 class="title-related-blog">{{ trans('detail.related-title') }}</h2>
                 <div class="list-related-blog">
                     <div class="related-blog-item">
                         <a href="/blog/1"><img src="{{asset('/images/post-1.png')}}" alt=""></a>
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="comments">
-                <h2 class="title-comment">Comment</h2>
+                <h2 class="title-comment">{{ trans('detail.comment-title') }}</h2>
                 <div class="user-comment">
                     <img src="{{asset('/images/post-1.png')}}" alt="">
                     <textarea name="comment" id="" cols="30" rows="10"></textarea>
@@ -89,14 +89,14 @@
     <div class="modal-content">
         <div class="modal-header">
             <span class="close">×</span>
-            <h2>Delete</h2>
+            <h2>{{ trans('detail.btn-delete-modal') }}</h2>
         </div>
         <div class="modal-body">
-            <p>Are you sure want to delete this blog?</p>
+            <p>{{ trans('detail.modal-content') }}</p>
         </div>
         <div class="modal-footer">
-            <button id="btn-cancel">Cancel</button>
-            <button class="btn-de">Delete</button>
+            <button id="btn-cancel">{{ trans('detail.btn-cancel-modal') }}</button>
+            <button class="btn-de">{{ trans('detail.btn-delete-modal') }}</button>
         </div>
     </div>
 

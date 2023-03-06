@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RT Blogs | Homepage</title>
+    <title>RT Blogs | {{ trans('index.title') }}</title>
     @vite(['resources/scss/app.scss', 'resources/css/app.css'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
@@ -22,7 +22,7 @@
                                 <a href="/" class="logo__name">RT-Blogs</a>
                             </div>
                             <div class="nav__search">
-                                <input type="text" placeholder="Search blog" />
+                                <input type="text" placeholder="{{ trans('header-client.placeholder-search') }}" />
                                 <div class="nav__search--icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -33,7 +33,7 @@
                         <div class="nav__option">
                             <div class="nav__option--btn">
                                 <a href="#" class="nav__option--btn-top">Top</a>
-                                <a href="/create" class="nav__option--btn-create">Create Blog</a>
+                                <a href="/create" class="nav__option--btn-create">{{ trans('header-client.btn-create') }}</a>
                             </div>
                             <div class="nav__option--user dropdown">
                                 <!-- <div class="dropdown-content">
@@ -80,7 +80,7 @@
             <div class="container content">
                 <div class="content__header">
                     <div class="content__header--title">
-                        <h1>List Blog</h1>
+                        <h1>{{ trans('index.title-content') }}</h1>
                     </div>
                     <select class="content__header--filter">
                         <option value="">Category</option>
@@ -120,7 +120,7 @@
                                 hulanjfh bfueodap fiefhief...
                             </p>
                             <div class="post__content--footer">
-                                <a href="/blog/1"><button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                                <a href="/blog/1"><button class="post__content--btn">{{ trans('index.read-more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                         </svg></button></a>
                             </div>
@@ -157,7 +157,7 @@
                                 hulanjfh bfueodap fiefhief...
                             </p>
                             <div class="post__content--footer">
-                                <a href="/blog/1"><button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                                <a href="/blog/1"><button class="post__content--btn">{{ trans('index.read-more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                         </svg></button></a>
                             </div>
@@ -194,7 +194,7 @@
                                 hulanjfh bfueodap fiefhief...
                             </p>
                             <div class="post__content--footer">
-                                <a href="/blog/1"><button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                                <a href="/blog/1"><button class="post__content--btn">{{ trans('index.read-more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                         </svg></button></a>
                             </div>
@@ -231,7 +231,7 @@
                                 hulanjfh bfueodap fiefhief...
                             </p>
                             <div class="post__content--footer">
-                                <a href="/blog/1"><button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                                <a href="/blog/1"><button class="post__content--btn">{{ trans('index.read-more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                         </svg></button></a>
                             </div>
@@ -268,7 +268,7 @@
                                 hulanjfh bfueodap fiefhief...
                             </p>
                             <div class="post__content--footer">
-                                <a href="/blog/1"><button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                                <a href="/blog/1"><button class="post__content--btn">{{ trans('index.read-more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                         </svg></button></a>
                             </div>
@@ -305,7 +305,7 @@
                                 hulanjfh bfueodap fiefhief...
                             </p>
                             <div class="post__content--footer">
-                                <a href="/blog/1"><button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                                <a href="/blog/1"><button class="post__content--btn">{{ trans('index.read-more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                         </svg></button></a>
                             </div>
@@ -342,7 +342,7 @@
                                 hulanjfh bfueodap fiefhief...
                             </p>
                             <div class="post__content--footer">
-                                <a href="/blog/1"><button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                                <a href="/blog/1"><button class="post__content--btn">{{ trans('index.read-more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                         </svg></button></a>
                             </div>
@@ -379,7 +379,7 @@
                                 hulanjfh bfueodap fiefhief...
                             </p>
                             <div class="post__content--footer">
-                                <a href="/blog/1"><button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                                <a href="/blog/1"><button class="post__content--btn">{{ trans('index.read-more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                         </svg></button></a>
                             </div>
@@ -416,7 +416,7 @@
                                 hulanjfh bfueodap fiefhief...
                             </p>
                             <div class="post__content--footer">
-                                <a href="/blog/1"><button class="post__content--btn">Read more <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
+                                <a href="/blog/1"><button class="post__content--btn">{{ trans('index.read-more') }} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 card-icon">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                                         </svg></button></a>
                             </div>
@@ -436,7 +436,7 @@
             </div>
         </main>
         <footer>
-            <p class="footer-paragraph">Copyright 2022. Made by Regit JSC</p>
+            <p class="footer-paragraph">Copyright 2022. {{ trans('index.made-by') }} Regit JSC</p>
         </footer>
     </div>
     <script src="{{asset('frontend/js/main.js')}}"></script>

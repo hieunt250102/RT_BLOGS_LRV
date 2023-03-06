@@ -20,20 +20,20 @@
                 </a>
             </div>
 
-            <h2 class="sign-in-title">Resset password</h2>
+            <h2 class="sign-in-title">{{ trans('reset-password.title') }}</h2>
             <form action="">
                 <div class="form-group">
-                    <label for="password">New password<span class="req">*</span></label>
+                    <label for="password">{{ trans('reset-password.title-field.new') }}<span class="req">*</span></label>
                     <input required type="password" id="password" name="password">
                     <div class="feed-back is-invalid">Error: password cannot be null</div>
                 </div>
                 <div class="form-group">
-                    <label for="password">Confirm new password<span class="req">*</span></label>
+                    <label for="password">{{ trans('reset-password.title-field.confirm') }}<span class="req">*</span></label>
                     <input required type="password" id="password" name="password">
                     <div class="feed-back is-invalid">Error: password cannot be null</div>
                 </div>
                 <div class="form-footer">
-                    <button>Reset password</button>
+                    <button>{{ trans('reset-password.btn-submit') }}</button>
                 </div>
             </form>
         </div>

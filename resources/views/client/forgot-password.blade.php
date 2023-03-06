@@ -20,15 +20,15 @@
                 </a>
             </div>
 
-            <h2>Forgot password</h2>
+            <h2>{{ trans('forgot-password.title') }}</h2>
             <form action="">
                 <div class="form-group">
-                    <label for="email">Email address <span class="req">*</span></label>
+                    <label for="email">{{ trans('forgot-password.email-field') }} <span class="req">*</span></label>
                     <input required type="email" id="email" name="email">
                     <div class="feed-back">Error: password cannot be null</div>
                 </div>
                 <div class="form-footer">
-                    <button>EMAIL PASSWORD RESET LINK</button>
+                    <button>{{ trans('forgot-password.btn-submit') }}</button>
                 </div>
             </form>
         </div>

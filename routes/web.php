@@ -42,3 +42,15 @@ Route::prefix('blogs')->group(function () {
         return view('client.blog-detail');
     });
 });
+
+Route::prefix('/admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.dashboard');
+    });
+    Route::get('/posts', function () {
+        return view('admin.posts.index');
+    });
+    Route::get('/users', function () {
+        return view('admin.users.index');
+    });
+});

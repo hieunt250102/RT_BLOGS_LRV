@@ -5,7 +5,7 @@
     <div class="container-detail">
         <div class="content-detail">
             <div class="breadcrumb">
-                <span>Home</span> > <b>Details blogs</b>
+                <span>{{ __('breadcrumb.home') }}</span> > <b>{{ __('breadcrumb.detail') }}</b>
             </div>
             <h2 class="title-blog">My cat is like the boss</h2>
             <div class="infor-blog">
@@ -21,7 +21,7 @@
                 <div class="author-option">
                     <!-- <button class="blog-status-not-approved">Not approved</button> -->
                     <button class="blog-status-approved">Approved</button>
-                    <button class="btn-delete" id="myBtn">Delete Blog</button>
+                    <button class="btn-delete" id="myBtn">{{ __('button.btn.delete.delete_nor') }}</button>
                 </div>
             </div>
 
@@ -34,36 +34,36 @@
             </div>
 
             <div class="related-blog">
-                <h2 class="title-related-blog">Related</h2>
+                <h2 class="title-related-blog">{{ __('title.title.related') }}</h2>
                 <div class="list-related-blog">
                     <div class="related-blog-item">
-                        <a href="/blog/1"><img src="{{asset('/images/post-1.png')}}" alt=""></a>
-                        <a href="/blog/1">
+                        <a href="{{ route('blogs.detail',['param'=>1]) }}"><img src="{{asset('/images/post-1.png')}}" alt=""></a>
+                        <a href="{{ route('blogs.detail',['param'=>1]) }}">
                             <h2>Lorem ipsum dolor sit amet, adipiscing elit.</h2>
                         </a>
                     </div>
                     <div class="related-blog-item">
-                        <a href="/blog/1"><img src="{{asset('/images/post-1.png')}}" alt=""></a>
-                        <a href="/blog/1">
+                        <a href="{{ route('blogs.detail',['param'=>1]) }}"><img src="{{asset('/images/post-1.png')}}" alt=""></a>
+                        <a href="{{ route('blogs.detail',['param'=>1]) }}">
                             <h2>Lorem ipsum dolor sit amet, adipiscing elit.</h2>
                         </a>
                     </div>
                     <div class="related-blog-item">
-                        <a href="/blog/1"><img src="{{asset('/images/post-1.png')}}" alt=""></a>
-                        <a href="/blog/1">
+                        <a href="{{ route('blogs.detail',['param'=>1]) }}"><img src="{{asset('/images/post-1.png')}}" alt=""></a>
+                        <a href="{{ route('blogs.detail',['param'=>1]) }}">
                             <h2>Lorem ipsum dolor sit amet, adipiscing elit.</h2>
                         </a>
                     </div>
                     <div class="related-blog-item">
-                        <a href="/blog/1"><img src="{{asset('/images/post-1.png')}}" alt=""></a>
-                        <a href="/blog/1">
+                        <a href="{{ route('blogs.detail',['param'=>1]) }}"><img src="{{asset('/images/post-1.png')}}" alt=""></a>
+                        <a href="{{ route('blogs.detail',['param'=>1]) }}">
                             <h2>Lorem ipsum dolor sit amet, adipiscing elit.</h2>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="comments">
-                <h2 class="title-comment">Comment</h2>
+                <h2 class="title-comment">{{ __('title.title.comment') }}</h2>
                 <div class="user-comment">
                     <img src="{{asset('/images/post-1.png')}}" alt="">
                     <textarea name="comment" id="" cols="30" rows="10"></textarea>
@@ -89,14 +89,14 @@
     <div class="modal-content">
         <div class="modal-header">
             <span class="close">×</span>
-            <h2>Delete</h2>
+            <h2>{{ __('button.btn.delete.delete_form') }}</h2>
         </div>
         <div class="modal-body">
-            <p>Are you sure want to delete this blog?</p>
+            <p>{{ __('title.title.modal_content') }}</p>
         </div>
         <div class="modal-footer">
-            <button id="btn-cancel">Cancel</button>
-            <button class="btn-de">Delete</button>
+            <button id="btn-cancel">{{ __('button.btn.cancel') }}</button>
+            <button class="btn-de">{{ __('button.btn.delete.delete_form') }}</button>
         </div>
     </div>
 

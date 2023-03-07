@@ -13,16 +13,16 @@
                                 ID
                             </th>
                             <th>
-                                Avatar
+                                {{ __('title.title.table.avatar') }}
                             </th>
                             <th>
-                                Name
+                                {{ __('title.title.table.name') }}
                             </th>
                             <th>
-                                Total post
+                                {{ __('title.title.table.total_blog') }}
                             </th>
                             <th>
-                                Status
+                                {{ __('title.title.table.status') }}
                             </th>
                             <th colspan="2">
                                 Option

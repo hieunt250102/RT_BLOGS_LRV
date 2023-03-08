@@ -21,21 +21,35 @@
             </div>
 
             <h2 class="sign-in-title">{{ __('title.title.signup') }}</h2>
-            <form action="">
+            <form action="{{route('sign-up')}}" method="POST">
+                @csrf
                 <div class="form-group">
                     <label for="email">{{ __('title-field.email') }} <span class="req">*</span></label>
-                    <input required type="email" id="email" name="email">
-                    <div class="feed-back">Error: password cannot be null</div>
+                    <input type="email" id="email" name="email" value="{{old('email')}}">
+                    @error('email')
+                    <div class="feed-back is-invalid">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="email">{{ __('title-field.name') }} <span class="req">*</span></label>
+                    <input type="text" id="email" name="name" value="{{old('name')}}">
+                    @error('name')
+                    <div class="feed-back is-invalid">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="password">{{ __('title-field.password') }}<span class="req">*</span></label>
-                    <input required type="password" id="password" name="password">
-                    <div class="feed-back is-invalid">Error: password cannot be null</div>
+                    <input type="password" id="password" name="password" value="{{old('password')}}">
+                    @error('password')
+                    <div class="feed-back is-invalid">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="password">{{ __('title-field.confirm') }}<span class="req">*</span></label>
-                    <input required type="password" id="password" name="confirm_password">
-                    <div class="feed-back is-invalid">Error: password cannot be null</div>
+                    <input type="password" id="password" name="password_confirmation" value="{{old('password')}}">
+                    @error('password')
+                    <div class="feed-back is-invalid">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="form-footer">
                     <button>{{ __('button.btn.submit_signup') }}</button>

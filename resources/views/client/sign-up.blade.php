@@ -21,7 +21,7 @@
             </div>
 
             <h2 class="sign-in-title">{{ __('title.title.signup') }}</h2>
-            <form action="{{route('sign-up')}}" method="POST">
+            <form action="{{route('auth.sign-up')}}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="email">{{ __('title-field.email') }} <span class="req">*</span></label>
@@ -46,14 +46,14 @@
                 </div>
                 <div class="form-group">
                     <label for="password">{{ __('title-field.confirm') }}<span class="req">*</span></label>
-                    <input type="password" id="password" name="password_confirmation" value="{{old('password')}}">
+                    <input type="password" id="password" name="password_confirmation">
                     @error('password')
                     <div class="feed-back is-invalid">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-footer">
                     <button>{{ __('button.btn.submit_signup') }}</button>
-                    <a href="{{route('sign-in')}}" class="register_link">{{ __('button.btn.nav_signin') }}</a>
+                    <a href="{{route('auth.sign-in')}}" class="register_link">{{ __('button.btn.nav_signin') }}</a>
                 </div>
             </form>
         </div>

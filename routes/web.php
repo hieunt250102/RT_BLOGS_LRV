@@ -1,6 +1,8 @@
 <?php
 
 // use App\Http\Controllers\Auth\LoginController;
+
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Support\Facades\Route;
@@ -16,11 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('auth')->group(function () {
+Route::group(['prefix'=>'auth','as'=>'auth.'],function () {
     Route::get('/sign-in', [LoginController::class, 'loginForm'])->name('sign-in');
     Route::post('/sign-in', [LoginController::class, 'login'])->name('sign-in');
     Route::get('/sign-up', [RegisterController::class, 'registerForm'])->name('sign-up');
     Route::post('/sign-up', [RegisterController::class, 'register'])->name('sign-up');
+    Route::get('/auth/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('email/verify', [VerificationController::class, 'show'])->name('email.verify');
     Route::get('/verify', [VerificationController::class, 'verify'])->name('verify');
     Route::post('/resend/verify', [VerificationController::class, 'resendVerify'])->name('resend.verify');

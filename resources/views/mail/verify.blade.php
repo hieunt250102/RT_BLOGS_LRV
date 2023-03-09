@@ -20,7 +20,7 @@
                 </a>
             </div>
             <h2 style="margin-bottom: 10px;">{{ __('title.title.verify') }}</h2>
-            <a href="{{route('verify',['token_verify' => $token_verify, 'time_create' => $time_create])}}">Verify email</a>
+            <a href="{{route('auth.verify',['token_verify' => $token_verify, 'time_create' => $time_create])}}">Verify email</a>
         </div>
     </div>
 </body>

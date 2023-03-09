@@ -4,13 +4,19 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
-use App\Mail\VerifyMail;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
+use App\Interfaces\UserServiceInterface;
+use App\Interfaces\VerifyMailServiceInterface;
 
 class RegisterController extends Controller
 {
+    private $userService, $verifyMailService;
+    public function __construct(UserServiceInterface $userService, VerifyMailServiceInterface $verifyMailService)
+    {
+        $this->userService = $userService;
+        $this->verifyMailService = $verifyMailService;
+    }
+
+
     public function registerForm()
     {
         return view('client.sign-up');
@@ -18,17 +24,12 @@ class RegisterController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'token_verify' => bin2hex(random_bytes(30)),
-        ]);
-        $mailable = new VerifyMail(
+        $user = $this->userService->createUser($request->all());
+        $this->verifyMailService->send(
+            $request->email,
             $user->token_verify,
             $user->created_at,
         );
-        Mail::to($user->email)->queue($mailable);
-        return redirect()->route('email.verify', ['email' => $user->email]);
+        return redirect()->route('auth.email.verify', ['email' => $user->email]);
     }
 }

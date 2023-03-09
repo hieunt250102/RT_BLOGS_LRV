@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Interfaces\UserServiceInterface;
+use App\Interfaces\VerificationServiceInterface;
+use App\Interfaces\VerifyMailServiceInterface;
 use App\Mail\VerifyMail;
 use App\Models\User;
 use Carbon\Carbon;
@@ -12,7 +15,16 @@ use Illuminate\Support\Facades\Mail;
 
 class VerificationController extends Controller
 {
-
+    private $userService, $verifyMailService, $verificationService;
+    public function __construct(
+        UserServiceInterface $userService,
+        VerifyMailServiceInterface $verifyMailService,
+        VerificationServiceInterface  $verificationService
+    ) {
+        $this->userService = $userService;
+        $this->verifyMailService = $verifyMailService;
+        $this->verificationService = $verificationService;
+    }
     public function show(Request $request)
     {
         return view('client.verify', [
@@ -23,34 +35,20 @@ class VerificationController extends Controller
 
     public function verify(Request $request)
     {
-        $tokenTimeExpire = (new DateTime(date("Y-m-d H:i:s", $request->time_create)))
-            ->modify('+3 minutes');
-        $user = User::where('token_verify', $request->token_verify)
-            ->first();
-        if ($tokenTimeExpire->getTimestamp() >= Carbon::now()->timestamp) {
-            $user->status = User::STATUS_VERIFIED;
-            $user->save();
-            return redirect()->route('sign-in')
-                ->with('alert', 'Verify successful, please login');
-        } else {
-            return redirect()->route('email.verify')->with([
-                'email' => $user->email,
-                'message' => "Verification code expired, please resend request"
-            ]);
-        }
+        $user = $this->userService->findUserWithConditions('token_verify', $request->token_verify);
+        return $this->verificationService->verify($request, $user);
     }
 
     public function resendVerify(Request $request)
     {
-        $user = User::where('email', $request->email)->first();
-        $mailable = new VerifyMail(
+        $user = $this->userService->findUserWithConditions('email', $request->email);
+        $this->verifyMailService->send(
+            $request->email,
             $user->token_verify,
             $user->created_at,
         );
-        Mail::to($request->email)->queue($mailable);
-        return redirect()->route('email.verify')
+        return redirect()->route('auth.email.verify', ['email' => $user->email])
             ->with([
-                'email' => $user->email,
                 'message' => "We have sent refresh link, please check your mail"
             ]);
     }

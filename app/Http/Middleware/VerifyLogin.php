@@ -2,13 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class VerifyRegist
+class VerifyLogin
 {
     /**
      * Handle an incoming request.
@@ -17,11 +16,8 @@ class VerifyRegist
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->status != User::STATUS_VERIFIED) {
-            return redirect()->route('auth.email.verify', [
-                'email' => Auth::user()->email,
-                'message' => ''
-            ]);
+        if(Auth::check()){
+            return redirect()->back();
         }
         return $next($request);
     }

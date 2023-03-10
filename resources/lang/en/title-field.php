@@ -2,6 +2,7 @@
 return [
     "category" => "Category",
     "title" => "Title",
+    "name" => "User name",
     "new" => "New password",
     "password" => "Password",
     "confirm" => "Confirm new password",

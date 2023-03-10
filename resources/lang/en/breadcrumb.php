@@ -3,4 +3,5 @@ return[
     "home" => "Home",
     "detail" =>  "Detail blog",
     "create" =>  "Create blog",
+    "edit" =>  "Edit blog",
 ];

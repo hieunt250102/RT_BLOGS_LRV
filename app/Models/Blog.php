@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Blog extends Model
 {
     use HasFactory;
+    const STATUS_APPROVED = 0;
+    const STATUS_NOT_APPROVED = 1;
+    const STATUS_PENDING= 2;
 
     protected $fillable = [
         'user_id',
@@ -22,7 +25,7 @@ class Blog extends Model
         'category_id'
     ];
 
-    public function author(): BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }

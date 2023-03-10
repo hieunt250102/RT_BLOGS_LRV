@@ -7,7 +7,7 @@
 @import "./_detail";
 
 .banner {
-    @include backgroundImage(url("/images/banner.png"), no-repeat, cover, center);
+    @include backgroundImage(url("./../../public/images/banner.png"), no-repeat, cover, center);
     height: 519px;
 }
 
@@ -195,6 +195,41 @@ main {
         background-color: rgba(255, 228, 228, 1);
         color: rgba(196, 0, 0, 1);
     }
+}
+
+.blog-status-not-approved {
+    color: #fff;
+    background: #ABB1AB;
+    border-radius: 3px;
+    padding: 6px;
+    border: none;
+    margin-right: 30px;
+}
+
+.blog-status-approved {
+    color: #fff;
+    background: rgba(24, 183, 39, 1);
+    border-radius: 3px;
+    padding: 6px;
+    border: none;
+    margin-right: 30px;
+}
+
+.blog-status-pending {
+    color: #fff;
+    background: rgb(218, 236, 21);
+    border-radius: 3px;
+    padding: 6px;
+    border: none;
+    margin-right: 30px;
+}
+.btn-delete {
+    color: #fff;
+    background: #DC3545;
+    border-radius: 3px;
+    padding: 6px;
+    border: none;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 769px) {

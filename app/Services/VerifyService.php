@@ -23,8 +23,7 @@ class VerifyService implements VerificationServiceInterface
             ->modify('+3 minutes');
         if ($tokenTimeExpire->getTimestamp() >= Carbon::now()->timestamp) {
             $this->userService->updateUser($user->id, ['status' => User::STATUS_VERIFIED]);
-            return redirect()->route('auth.sign-in')
-                ->with('alert', 'Verify successful, please login');
+            return redirect()->route('blogs.index');
         } else {
             return redirect()->route('auth.email.verify')->with([
                 'email' => $user->email,

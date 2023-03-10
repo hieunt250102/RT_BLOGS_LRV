@@ -18,15 +18,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['prefix'=>'auth','as'=>'auth.'],function () {
+Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
     Route::get('/sign-in', [LoginController::class, 'loginForm'])->name('sign-in');
     Route::post('/sign-in', [LoginController::class, 'login'])->name('sign-in');
     Route::get('/sign-up', [RegisterController::class, 'registerForm'])->name('sign-up');
     Route::post('/sign-up', [RegisterController::class, 'register'])->name('sign-up');
-    Route::get('/auth/logout', [LoginController::class, 'logout'])->name('logout');
-    Route::get('email/verify', [VerificationController::class, 'show'])->name('email.verify');
-    Route::get('/verify', [VerificationController::class, 'verify'])->name('verify');
-    Route::post('/resend/verify', [VerificationController::class, 'resendVerify'])->name('resend.verify');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::middleware('auth')->group(function () {
+        Route::get('email/verify', [VerificationController::class, 'show'])->name('email.verify');
+        Route::get('/verify', [VerificationController::class, 'verify'])->name('verify');
+        Route::post('/resend/verify', [VerificationController::class, 'resendVerify'])->name('resend.verify');
+    });
 
     Route::get('/forgot-password', function () {
         return view('client.forgot-password');
@@ -34,13 +36,13 @@ Route::group(['prefix'=>'auth','as'=>'auth.'],function () {
     Route::get('/reset-password', function () {
         return view('client.reset-password');
     })->name('reset');
-})->middleware(['verify.register']);
+});
 
 Route::prefix('blogs')->group(function () {
     Route::get('/', function () {
         return view('client.index');
     })->name('blogs.index');
-    Route::get('/create', function () {
+    Route::middleware('auth')->get('/create', function () {
         return view('client.create-blog');
     })->name('blogs.make');
     Route::get('/me', function () {

@@ -20,7 +20,7 @@
                 </a>
             </div>
             <h2 style="margin-bottom: 10px;">{{ __('title.title.verify') }}</h2>
-            <form action="{{route('resend.verify')}}" method="POST">
+            <form action="{{route('auth.resend.verify')}}" method="POST">
                 @csrf
                 <input type="hidden" hidden name="email" value="{{$email}}">
                 <input type="text" disabled value="{{ (session()->has('message')) ? session()->get('message') : __('title.title.verify_content') }}" />

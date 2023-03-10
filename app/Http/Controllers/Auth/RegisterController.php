@@ -14,6 +14,7 @@ class RegisterController extends Controller
     {
         $this->userService = $userService;
         $this->verifyMailService = $verifyMailService;
+        $this->middleware('guest')->except('logout');
     }
 
 

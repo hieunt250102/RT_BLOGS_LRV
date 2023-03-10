@@ -13,6 +13,7 @@ class LoginController extends Controller
     public function __construct(AuthenticationServiceInterface $authenticationService)
     {
         $this->authenticationService = $authenticationService;
+        $this->middleware('guest')->except('logout');
     }
     public function loginForm()
     {

@@ -1,10 +1,12 @@
 <?php
 
-// use App\Http\Controllers\Auth\LoginController;
-
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\Client\BlogController as ClientBlogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +26,7 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
     Route::get('/sign-up', [RegisterController::class, 'registerForm'])->name('sign-up');
     Route::post('/sign-up', [RegisterController::class, 'register'])->name('sign-up');
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
     Route::middleware('auth')->group(function () {
         Route::get('email/verify', [VerificationController::class, 'show'])->name('email.verify');
         Route::get('/verify', [VerificationController::class, 'verify'])->name('verify');
@@ -38,29 +41,16 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
     })->name('reset');
 });
 
-Route::prefix('blogs')->group(function () {
-    Route::get('/', function () {
-        return view('client.index');
-    })->name('blogs.index');
-    Route::middleware('auth')->get('/create', function () {
-        return view('client.create-blog');
-    })->name('blogs.make');
-    Route::get('/me', function () {
-        return view('client.my-blogs');
-    })->name('blogs.me');
-    Route::get('/{param}', function () {
-        return view('client.blog-detail');
-    })->name('blogs.detail');
-});
+Route::resource('blogs', ClientBlogController::class);
+Route::resource('blogs', ClientBlogController::class)->only('create')->middleware('auth');
+Route::get('/blogs/{slug}', [ClientBlogController::class, 'show'])->name('blogs.show');
+Route::get('my-blogs', [ClientBlogController::class, 'myBlogs'])->name('blogs.me');
 
-Route::prefix('/admin')->group(function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/', function () {
         return view('admin.dashboard');
-    })->name('admin.index');
-    Route::get('/posts', function () {
-        return view('admin.posts.index');
-    })->name('posts.list');
-    Route::get('/users', function () {
-        return view('admin.users.index');
-    })->name('users.list');
+    })->name('index');
+    Route::resource('blogs', BlogController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('categories', CategoryController::class);
 });

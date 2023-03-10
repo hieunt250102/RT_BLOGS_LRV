@@ -5,6 +5,7 @@ return [
         "verify_content" =>  "Before proceeding, please check your email for a verification link",
         "homepage" => "List blogs",
         "create" => "Create blogs",
+        "edit" => "Edit blogs",
         "signin" => "Sign in",
         "signup" => "Sign up",
         "related" => "Related",

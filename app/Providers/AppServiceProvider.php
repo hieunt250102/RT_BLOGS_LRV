@@ -3,10 +3,14 @@
 namespace App\Providers;
 
 use App\Interfaces\AuthenticationServiceInterface;
+use App\Interfaces\BlogServiceInterface;
+use App\Interfaces\CategoryServiceInterface;
 use App\Interfaces\VerifyMailServiceInterface;
 use App\Interfaces\UserServiceInterface;
 use App\Interfaces\VerificationServiceInterface;
 use App\Services\AuthenticationService;
+use App\Services\BlogService;
+use App\Services\CategoryService;
 use App\Services\UserService;
 use App\Services\VerifyMailService;
 use App\Services\VerifyService;
@@ -36,6 +40,12 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(UserServiceInterface::class, function () {
             return new UserService();
+        });
+        $this->app->bind(BlogServiceInterface::class, function () {
+            return new BlogService();
+        });
+        $this->app->bind(CategoryServiceInterface::class, function () {
+            return new CategoryService();
         });
     }
 

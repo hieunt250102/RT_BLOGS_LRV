@@ -8,6 +8,7 @@
     <title>RT Blogs | @yield('title')</title>
     @vite(['resources/scss/app.scss', 'resources/css/app.css'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
 </head>
 
 <body>
@@ -19,6 +20,7 @@
         @include('layouts.client.footer')
     </div>
     <script src="{{asset('frontend/js/main.js')}}"></script>
+    <script src="{{asset('frontend/js/uploadImage.js')}}"></script>
 </body>
 
 </html>

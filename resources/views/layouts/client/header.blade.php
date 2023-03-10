@@ -19,7 +19,7 @@
                 <div class="nav__option">
                     <div class="nav__option--btn">
                         <a href="#" class="nav__option--btn-top">Top</a>
-                        <a href="{{route('blogs.make')}}" class="nav__option--btn-create">{{ __('button.btn.create') }}</a>
+                        <a href="{{route('blogs.create')}}" class="nav__option--btn-create">{{ __('button.btn.create') }}</a>
                     </div>
                     <div class="nav__option--user dropdown">
                         @if(!Auth::check())
@@ -28,7 +28,7 @@
                         @else
                         <div class="dropdown-content">
                             <a href="{{route('auth.logout')}}">{{ __('button.btn.logout') }}</a>
-                            <a href="#">{{ __('button.btn.my_blogs') }}</a>
+                            <a href="{{route('blogs.me')}}">{{ __('button.btn.my_blogs') }}</a>
                         </div>
                         <p class="nav__option--user-name" style=" width: 100px;white-space: nowrap;overflow: hidden;">{{Auth::user()->name}}</p>
                         <div class="nav__option--user-avatar ">

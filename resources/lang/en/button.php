@@ -2,7 +2,9 @@
 return [
     "btn" => [
         "create" => "Create blog",
+        "edit" => "Edit blog",
         "create_form" => "Create",
+        "edit_form" => "Update",
         "signin" => "Sign in",
         "signup" => "Sign up",
         "logout" => "Logout",

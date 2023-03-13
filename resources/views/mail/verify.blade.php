@@ -14,13 +14,13 @@
     <div class="wrapper-form">
         <div class="container">
             <div class="logo">
-                <a href="{{route('blogs.index')}}"><img src="{{asset('images/logo.png')}}" alt=""></a>
-                <a href="{{route('blogs.index')}}">
+                <a href="{{ route('blogs.index') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+                <a href="{{ route('blogs.index') }}">
                     <h1>RT-Blogs</h1>
                 </a>
             </div>
-            <h2 style="margin-bottom: 10px;">{{ __('title.title.verify') }}</h2>
-            <a href="{{route('auth.verify',['token_verify' => $token_verify, 'time_create' => $time_create])}}">Verify email</a>
+            <h2 class="mb-10">{{ __('title.title.verify') }}</h2>
+            <a href="{{ route('auth.verify',['token_verify' => $token_verify, 'time_create' => $time_create]) }}">Verify email</a>
         </div>
     </div>
 </body>

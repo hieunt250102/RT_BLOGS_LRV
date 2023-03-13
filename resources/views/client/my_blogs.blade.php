@@ -14,7 +14,7 @@
     </div>
     <div class="content__grid">
         <div class="content__grid--post">
-            <img src="{{asset('images/post-1.png')}}" alt="" class="post__thumb" />
+            <img src="{{ asset('images/post-1.png') }}" alt="" class="post__thumb" />
             <div class="post__content">
                 <div class="post__content--infor">
                     <div class="post__content--group">
@@ -49,7 +49,7 @@
             </div>
         </div>
         <div class="content__grid--post">
-            <img src="{{asset('images/post-2.png')}}" alt="" class="post__thumb" />
+            <img src="{{ asset('images/post-2.png') }}" alt="" class="post__thumb" />
             <div class="post__content">
                 <div class="post__content--infor">
                     <div class="post__content--group">
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="content__grid--post">
-            <img src="{{asset('images/post-3.png')}}" alt="" class="post__thumb" />
+            <img src="{{ asset('images/post-3.png') }}" alt="" class="post__thumb" />
             <div class="post__content">
                 <div class="post__content--infor">
                     <div class="post__content--group">
@@ -119,7 +119,7 @@
             </div>
         </div>
         <div class="content__grid--post">
-            <img src="{{asset('images/post-4.png')}}" alt="" class="post__thumb" />
+            <img src="{{ asset('images/post-4.png') }}" alt="" class="post__thumb" />
             <div class="post__content">
                 <div class="post__content--infor">
                     <div class="post__content--group">
@@ -154,7 +154,7 @@
             </div>
         </div>
         <div class="content__grid--post">
-            <img src="{{asset('images/post-5.png')}}" alt="" class="post__thumb" />
+            <img src="{{ asset('images/post-5.png') }}" alt="" class="post__thumb" />
             <div class="post__content">
                 <div class="post__content--infor">
                     <div class="post__content--group">
@@ -189,7 +189,7 @@
             </div>
         </div>
         <div class="content__grid--post">
-            <img src="{{asset('images/post-6.png')}}" alt="" class="post__thumb" />
+            <img src="{{ asset('images/post-6.png') }}" alt="" class="post__thumb" />
             <div class="post__content">
                 <div class="post__content--infor">
                     <div class="post__content--group">
@@ -224,7 +224,7 @@
             </div>
         </div>
         <div class="content__grid--post">
-            <img src="{{asset('images/post-7.png')}}" alt="" class="post__thumb" />
+            <img src="{{ asset('images/post-7.png') }}" alt="" class="post__thumb" />
             <div class="post__content">
                 <div class="post__content--infor">
                     <div class="post__content--group">
@@ -259,7 +259,7 @@
             </div>
         </div>
         <div class="content__grid--post">
-            <img src="{{asset('images/post-8.png')}}" alt="" class="post__thumb" />
+            <img src="{{ asset('images/post-8.png') }}" alt="" class="post__thumb" />
             <div class="post__content">
                 <div class="post__content--infor">
                     <div class="post__content--group">
@@ -294,7 +294,7 @@
             </div>
         </div>
         <div class="content__grid--post">
-            <img src="{{asset('images/post-9.png')}}" alt="" class="post__thumb" />
+            <img src="{{ asset('images/post-9.png') }}" alt="" class="post__thumb" />
             <div class="post__content">
                 <div class="post__content--infor">
                     <div class="post__content--group">

@@ -14,15 +14,15 @@
     <div class="wrapper-form">
         <div class="container">
             <div class="logo">
-                <a href="{{route('blogs.index')}}"><img src="{{asset('images/logo.png')}}" alt=""></a>
-                <a href="{{route('blogs.index')}}">
+                <a href="{{ route('blogs.index') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+                <a href="{{ route('blogs.index') }}">
                     <h1>RT-Blogs</h1>
                 </a>
             </div>
-            <h2 style="margin-bottom: 10px;">{{ __('title.title.verify') }}</h2>
-            <form action="{{route('auth.resend.verify')}}" method="POST">
+            <h2 class="mb-10">{{ __('title.title.verify') }}</h2>
+            <form action="{{ route('auth.resend.verify') }}" method="POST">
                 @csrf
-                <input type="hidden" hidden name="email" value="{{$email}}">
+                <input type="hidden" hidden name="email" value="{{ $email }}">
                 <input type="text" disabled value="{{ (session()->has('message')) ? session()->get('message') : __('title.title.verify_content') }}" />
                 <div class="form-footer">
                     <button>{{ __('button.btn.submit_verify') }}</button>

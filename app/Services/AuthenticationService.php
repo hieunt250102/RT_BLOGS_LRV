@@ -26,12 +26,12 @@ class AuthenticationService implements AuthenticationServiceInterface
                 return redirect()->route('blogs.index');
             } else {
                 return redirect()->route('auth.email.verify', [
-                    'email' => $request->email,
+                    'email' => Auth::user()->email,
                     'message' => ''
                 ]);
             }
         } else {
-            return redirect()->back()->with(['err' => 'Username or password is incorrect!']);
+            return redirect()->back()->with(['err' => __('message.login')]);
         }
     }
 

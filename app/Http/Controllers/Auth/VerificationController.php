@@ -6,12 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Interfaces\UserServiceInterface;
 use App\Interfaces\VerificationServiceInterface;
 use App\Interfaces\VerifyMailServiceInterface;
-use App\Mail\VerifyMail;
-use App\Models\User;
-use Carbon\Carbon;
-use DateTime;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
 class VerificationController extends Controller
 {
@@ -52,7 +47,7 @@ class VerificationController extends Controller
         );
         return redirect()->route('auth.email.verify', ['email' => $user->email])
             ->with([
-                'message' => "We have sent refresh link, please check your mail"
+                'message' => __('message.resend')
             ]);
     }
 }

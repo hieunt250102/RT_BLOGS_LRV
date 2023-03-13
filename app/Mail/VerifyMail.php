@@ -13,15 +13,15 @@ use Illuminate\Queue\SerializesModels;
 class VerifyMail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
-    private $token_verify;
-    private $time_create;
+    private $tokenVerify;
+    private $timeCreate;
     /**
      * Create a new message instance.
      */
-    public function __construct($token_verify, $time_create)
+    public function __construct($tokenVerify, $timeCreate)
     {
-        $this->token_verify = $token_verify;
-        $this->time_create = $time_create;
+        $this->tokenVerify = $tokenVerify;
+        $this->timeCreate = $timeCreate;
         $this->queue = 'verify';
     }
 
@@ -43,8 +43,8 @@ class VerifyMail extends Mailable implements ShouldQueue
         return new Content(
             view: 'mail.verify',
             with: [
-                'token_verify' => $this->token_verify,
-                'time_create' => strtotime($this->time_create),
+                'token_verify' => $this->tokenVerify,
+                'time_create' => strtotime($this->timeCreate),
             ]
         );
     }

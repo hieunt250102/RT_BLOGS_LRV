@@ -25,8 +25,7 @@ class VerifyService implements VerificationServiceInterface
             $this->userService->updateUser($user->id, ['status' => User::STATUS_VERIFIED]);
             return redirect()->route('blogs.index');
         } else {
-            return redirect()->route('auth.email.verify')->with([
-                'email' => $user->email,
+            return redirect()->route('auth.email.verify', ['email' => $user->email])->with([
                 'message' => "Verification code expired, please resend request"
             ]);
         }

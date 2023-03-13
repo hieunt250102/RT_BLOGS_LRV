@@ -11,7 +11,7 @@ class RegisterController extends Controller
 {
     private $userService;
     private $verifyMailService;
-    
+
     public function __construct(UserServiceInterface $userService, VerifyMailServiceInterface $verifyMailService)
     {
         $this->userService = $userService;
@@ -22,12 +22,12 @@ class RegisterController extends Controller
 
     public function registerForm()
     {
-        return view('client.sign-up');
+        return view('client.sign_up');
     }
 
     public function register(RegisterRequest $request)
     {
-        $user = $this->userService->createUser($request->all());
+        $user = $this->userService->createUser($request->only(['name', 'email', 'password']));
         $this->verifyMailService->send(
             $request->email,
             $user->token_verify,

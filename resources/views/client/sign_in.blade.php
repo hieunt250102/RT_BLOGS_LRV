@@ -14,39 +14,39 @@
     <div class="wrapper-form">
         <div class="container">
             <div class="logo">
-                <a href="{{ route('blogs.index')}}"><img src="{{asset('images/logo.png')}}" alt=""></a>
-                <a href="{{ route('blogs.index')}}">
+                <a href="{{ route('blogs.index') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+                <a href="{{ route('blogs.index') }}">
                     <h1>RT-Blogs</h1>
                 </a>
             </div>
 
             <h2>{{ __('title.title.signin') }}</h2>
             @if(session()->has('alert'))
-            <div class="alert-success">
-                <a href="#" class="text-success" data-dismiss="alert" aria-label="close">&times;</a>
-                {{session()->get('alert')}}
-            </div>
+                <div class="alert-success">
+                    <a href="#" class="text-success" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{session()->get('alert') }}
+                </div>
             @endif
             @if(session()->has('err'))
-            <div class="alert-danger">
-                <a href="#" class="text-danger" data-dismiss="alert" aria-label="close">&times;</a>
-                {{session()->get('err')}}
-            </div>
+                <div class="alert-danger">
+                    <a href="#" class="text-danger" data-dismiss="alert" aria-label="close">&times;</a>
+                    {{session()->get('err') }}
+                </div>
             @endif
-            <form action="{{route('auth.sign-in')}}" method="POST">
+            <form action="{{ route('auth.sign-in') }}" method="POST">
                 @csrf
                 <div class="form-group">
                     <label for="email">{{ __('title-field.name_email') }} <span class="req">*</span></label>
-                    <input required type="text" id="email" name="username" value="{{old('username')}}">
+                    <input required type="text" id="email" name="username" value="{{old('username') }}">
                     @error('username')
-                    <div class="feed-back is-invalid">{{ $message }}</div>
+                        <div class="feed-back is-invalid">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="password">{{ __('title-field.password') }}<span class="req">*</span></label>
                     <input required type="password" id="password" name="password">
                     @error('password')
-                    <div class="feed-back is-invalid">{{ $message }}</div>
+                        <div class="feed-back is-invalid">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="user-option">
@@ -54,13 +54,13 @@
                         <input type="checkbox" name="remmember" id="remmember">
                         <p>{{ __('title-field.remmember') }}</p>
                     </div>
-                    <a href="{{route('auth.forgot')}}" class="user-option__forgot">
+                    <a href="{{ route('auth.forgot') }}" class="user-option__forgot">
                         {{ __('title-field.forgot') }}
                     </a>
                 </div>
                 <div class="form-footer">
                     <button>{{ __('button.btn.submit_signin') }}</button>
-                    <a href="{{route('auth.sign-up')}}">{{ __('button.btn.nav_signup') }}</a>
+                    <a href="{{ route('auth.sign-up') }}">{{ __('button.btn.nav_signup') }}</a>
                 </div>
             </form>
         </div>

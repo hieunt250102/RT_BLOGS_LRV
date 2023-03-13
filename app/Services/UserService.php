@@ -13,9 +13,9 @@ class UserService implements UserServiceInterface
         try {
             return User::select('id', 'name', 'email', 'password', 'avatar', 'token_verify', 'role', 'status')
                 ->orderBy('updated_at', 'DESC')
-                ->paginate(5);
+                ->paginate(config('pagination.per_page'));
         } catch (\Exception $e) {
-            throw new \Exception('Unable to insert user to database', 500);
+            throw new \Exception('Cannot find these users', 500);
         }
     }
 
@@ -32,7 +32,6 @@ class UserService implements UserServiceInterface
             throw new \Exception('Unable to insert user to database', 500);
         }
     }
-
 
     public function findUserWithConditions($column, $operator = null, $value = null)
     {

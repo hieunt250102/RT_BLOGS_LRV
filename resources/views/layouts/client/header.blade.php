@@ -4,8 +4,8 @@
             <div class="nav">
                 <div class="nav__logo">
                     <div class="nav__logo--group">
-                        <a href="{{route('blogs.index')}}"><img src="{{asset('images/logo.png')}}" alt="" class="logo__image" /></a>
-                        <a href="{{route('blogs.index')}}" class="logo__name">RT-Blogs</a>
+                        <a href="{{ route('blogs.index') }}"><img src="{{ asset('images/logo.png') }}" alt="" class="logo__image" /></a>
+                        <a href="{{ route('blogs.index') }}" class="logo__name">RT-Blogs</a>
                     </div>
                     <div class="nav__search">
                         <input type="text" placeholder="{{ __('header-client.placeholder-search') }}" />
@@ -19,17 +19,20 @@
                 <div class="nav__option">
                     <div class="nav__option--btn">
                         <a href="#" class="nav__option--btn-top">Top</a>
-                        <a href="{{route('blogs.make')}}" class="nav__option--btn-create">{{ __('button.btn.create') }}</a>
+                        <a href="{{ route('blogs.make') }}" class="nav__option--btn-create">{{ __('button.btn.create') }}</a>
                     </div>
                     <div class="nav__option--user dropdown">
-                        @if(!Auth::check())
-                        <a href="{{route('auth.sign-in')}}" class="nav__option--user-name">{{ __('button.btn.signin') }}</a>
-                        <a href="{{route('auth.sign-up')}}" class="nav__option--user-name">{{ __('button.btn.signup') }}</a>
-                        @else
+                        @unless(Auth::check())
+                        <a href="{{ route('auth.sign-in') }}" class="nav__option--user-name">{{ __('button.btn.signin') }}</a>
+                        <a href="{{ route('auth.sign-up') }}" class="nav__option--user-name">{{ __('button.btn.signup') }}</a>
+                        @endunless
+
+                        @unless(!Auth::check())
                         <div class="dropdown-content">
-                            <a href="{{route('auth.logout')}}">{{ __('button.btn.logout') }}</a>
+                            <a href="{{ route('auth.logout') }}">{{ __('button.btn.logout') }}</a>
                             <a href="#">{{ __('button.btn.my_blogs') }}</a>
                         </div>
+                        @endunless
                         <p class="nav__option--user-name" style=" width: 100px;white-space: nowrap;overflow: hidden;">{{Auth::user()->name}}</p>
                         <div class="nav__option--user-avatar ">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -51,7 +54,7 @@
             </div>
             <div class="header-menu-logoicon">
                 <div class="header-menu-logo">
-                    <img src="{{asset('images/logo.png')}}" alt="header-logo" class="header-menu-imageicon" />
+                    <img src="{{ asset('images/logo.png') }}" alt="header-logo" class="header-menu-imageicon" />
                 </div>
                 <p class="header-logo-namemenu">RT-Blogs</p>
             </div>

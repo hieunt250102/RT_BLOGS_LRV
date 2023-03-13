@@ -14,8 +14,8 @@
     <div class="wrapper-form">
         <div class="container">
             <div class="logo">
-                <a href="{{ route('blogs.index')}}"><img src="{{asset('images/logo.png')}}" alt=""></a>
-                <a href="{{ route('blogs.index')}}">
+                <a href="{{ route('blogs.index') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+                <a href="{{ route('blogs.index') }}">
                     <h1>RT-Blogs</h1>
                 </a>
             </div>

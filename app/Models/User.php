@@ -12,7 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     const ROLE_ADMIN = 1;
-    const ROLE_CUSTOMER = 1;
+    const ROLE_CUSTOMER = 2;
     const STATUS_NOT_VERIFED = 1;
     const STATUS_VERIFIED = 2;
     const STATUS_BANNED = 3;

@@ -31,25 +31,25 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
     });
 
     Route::get('/forgot-password', function () {
-        return view('client.forgot-password');
+        return view('client.forgot_password');
     })->name('forgot');
     Route::get('/reset-password', function () {
-        return view('client.reset-password');
+        return view('client.reset_password');
     })->name('reset');
 });
 
 Route::prefix('blogs')->group(function () {
-    Route::get('/', function () {
+    Route::middleware('checkRole')->get('/', function () {
         return view('client.index');
     })->name('blogs.index');
     Route::middleware('auth')->get('/create', function () {
-        return view('client.create-blog');
+        return view('client.create_blog');
     })->name('blogs.make');
     Route::get('/me', function () {
-        return view('client.my-blogs');
+        return view('client.my_blogs');
     })->name('blogs.me');
     Route::get('/{param}', function () {
-        return view('client.blog-detail');
+        return view('client.blog_detail');
     })->name('blogs.detail');
 });
 

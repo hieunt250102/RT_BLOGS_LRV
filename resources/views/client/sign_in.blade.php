@@ -22,14 +22,14 @@
 
             <h2>{{ __('title.title.signin') }}</h2>
             @if(session()->has('alert'))
-            <div style="color: #3c763d;background-color: #dff0d8; border-color: #d6e9c6;padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px;">
-                <a href="#" style=" text-decoration: none; float: right; font-size: 21px; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20); opacity: .2;" data-dismiss="alert" aria-label="close">&times;</a>
+            <div class="alert-success">
+                <a href="#" class="text-success" data-dismiss="alert" aria-label="close">&times;</a>
                 {{session()->get('alert')}}
             </div>
             @endif
             @if(session()->has('err'))
-            <div style="color: #ff4757;background-color: #ffe0e3; border-color: #ff4757;padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px;">
-                <a href="#" style=" text-decoration: none; float: right; font-size: 21px; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20); opacity: .2;" data-dismiss="alert" aria-label="close">&times;</a>
+            <div class="alert-danger">
+                <a href="#" class="text-danger" data-dismiss="alert" aria-label="close">&times;</a>
                 {{session()->get('err')}}
             </div>
             @endif

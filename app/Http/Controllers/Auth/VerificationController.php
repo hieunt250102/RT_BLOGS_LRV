@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Mail;
 
 class VerificationController extends Controller
 {
-    private $userService, $verifyMailService, $verificationService;
+    private $userService;
+    private $verifyMailService;
+    private $verificationService;
+
     public function __construct(
         UserServiceInterface $userService,
         VerifyMailServiceInterface $verifyMailService,

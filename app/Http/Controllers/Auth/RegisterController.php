@@ -9,7 +9,9 @@ use App\Interfaces\VerifyMailServiceInterface;
 
 class RegisterController extends Controller
 {
-    private $userService, $verifyMailService;
+    private $userService;
+    private $verifyMailService;
+    
     public function __construct(UserServiceInterface $userService, VerifyMailServiceInterface $verifyMailService)
     {
         $this->userService = $userService;

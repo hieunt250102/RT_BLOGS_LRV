@@ -23,11 +23,7 @@ class AuthenticationService implements AuthenticationServiceInterface
             $user = Auth::getProvider()->retrieveByCredentials($fields);
             Auth::login($user);
             if (Auth::user()->status == User::STATUS_VERIFIED) {
-                if (Auth::user()->role == User::ROLE_CUSTOMER) {
-                    return redirect()->route('blogs.index');
-                } else {
-                    return redirect()->route('admin.index');
-                }
+                return redirect()->route('blogs.index');
             } else {
                 return redirect()->route('auth.email.verify', [
                     'email' => $request->email,

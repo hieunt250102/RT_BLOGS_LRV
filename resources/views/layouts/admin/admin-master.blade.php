@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>RT BLOGS | @yield('title') </title>
-    <link rel="stylesheet" href="{{asset('backend/css/vertical-layout-light/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('backend/css/vertical-layout-light/style.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 
@@ -210,9 +210,9 @@
     </div>
     <!-- container-scroller -->
 
-    <script src="{{asset('backend/vendors/js/vendor.bundle.base.js')}}"></script>
-    <script src="{{asset('backend/js/template.js')}}"></script>
-    <script src="{{asset('backend/js/settings.js')}}"></script>
+    <script src="{{ asset('backend/vendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('backend/js/template.js') }}"></script>
+    <script src="{{ asset('backend/js/settings.js') }}"></script>
 </body>
 
 </html>

@@ -1,5 +1,10 @@
 <?php
 
+// use App\Http\Controllers\Auth\LoginController;
+
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\VerificationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,33 +18,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('auth')->group(function () {
-    Route::get('/sign-in', function () {
-        return view('client.sign-in');
-    })->name('sign-in');
-    Route::get('/sign-up', function () {
-        return view('client.sign-up');
-    })->name('sign-up');
+Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
+    Route::get('/sign-in', [LoginController::class, 'loginForm'])->name('sign-in');
+    Route::post('/sign-in', [LoginController::class, 'login'])->name('sign-in');
+    Route::get('/sign-up', [RegisterController::class, 'registerForm'])->name('sign-up');
+    Route::post('/sign-up', [RegisterController::class, 'register'])->name('sign-up');
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::middleware('auth')->group(function () {
+        Route::get('email/verify', [VerificationController::class, 'show'])->name('email.verify');
+        Route::get('/verify', [VerificationController::class, 'verify'])->name('verify');
+        Route::post('/resend/verify', [VerificationController::class, 'resendVerify'])->name('resend.verify');
+    });
+
     Route::get('/forgot-password', function () {
-        return view('client.forgot-password');
+        return view('client.forgot_password');
     })->name('forgot');
     Route::get('/reset-password', function () {
-        return view('client.reset-password');
+        return view('client.reset_password');
     })->name('reset');
 });
 
 Route::prefix('blogs')->group(function () {
-    Route::get('/', function () {
+    Route::middleware('checkRole')->get('/', function () {
         return view('client.index');
     })->name('blogs.index');
-    Route::get('/create', function () {
-        return view('client.create-blog');
+    Route::middleware('auth')->get('/create', function () {
+        return view('client.create_blog');
     })->name('blogs.make');
     Route::get('/me', function () {
-        return view('client.my-blogs');
+        return view('client.my_blogs');
     })->name('blogs.me');
     Route::get('/{param}', function () {
-        return view('client.blog-detail');
+        return view('client.blog_detail');
     })->name('blogs.detail');
 });
 

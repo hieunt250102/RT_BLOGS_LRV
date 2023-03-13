@@ -7,10 +7,10 @@
         </div>
         <div>
             <a class="navbar-brand brand-logo" href="">
-                <img src="{{asset('images/logo.png')}}" alt="logo" />
+                <img src="{{ asset('images/logo.png') }}" alt="logo" />
             </a>
             <a class="navbar-brand brand-logo-mini" href="">
-                <img src="{{asset('images/logo.png')}}" alt="logo" />
+                <img src="{{ asset('images/logo.png') }}" alt="logo" />
             </a>
         </div>
     </div>
@@ -116,7 +116,7 @@
                     <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-calendar-check-outline text-primary me-2"></i> Activity</a>
                     <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i>
                         FAQ</a>
-                    <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+                    <a href="{{ route('auth.logout') }}" class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
                 </div>
             </li>
         </ul>

@@ -18,7 +18,7 @@
         </main>
         @include('layouts.client.footer')
     </div>
-    <script src="{{asset('frontend/js/main.js')}}"></script>
+    <script src="{{ asset('frontend/js/main.js') }}"></script>
 </body>
 
 </html>

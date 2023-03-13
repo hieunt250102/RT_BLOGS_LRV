@@ -17,6 +17,8 @@ return [
         "submit_reset" => "RESET",
         "submit_signin" => "Sign in",
         "submit_signup" => "Sign up",
+        "submit_verify" => "Click here to resend",
+        "submit_verify_mail" => "Click here to verify",
         "nav_signup" => "Don’t have an account? Sign up here",
         "nav_signin" => "Already have an account? Login",
     ]

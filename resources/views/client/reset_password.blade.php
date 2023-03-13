@@ -14,32 +14,26 @@
     <div class="wrapper-form">
         <div class="container">
             <div class="logo">
-                <a href="{{ route('blogs.index')}}"><img src="{{asset('images/logo.png')}}" alt=""></a>
-                <a href="{{ route('blogs.index')}}">
+                <a href="{{ route('blogs.index') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+                <a href="{{ route('blogs.index') }}">
                     <h1>RT-Blogs</h1>
                 </a>
             </div>
 
-            <h2 class="sign-in-title">{{ __('title.title.signup') }}</h2>
+            <h2 class="sign-in-title">{{ __('title.title.reset') }}</h2>
             <form action="">
                 <div class="form-group">
-                    <label for="email">{{ __('title-field.email') }} <span class="req">*</span></label>
-                    <input required type="email" id="email" name="email">
-                    <div class="feed-back">Error: password cannot be null</div>
-                </div>
-                <div class="form-group">
-                    <label for="password">{{ __('title-field.password') }}<span class="req">*</span></label>
+                    <label for="password">{{ __('title-field.new') }}<span class="req">*</span></label>
                     <input required type="password" id="password" name="password">
                     <div class="feed-back is-invalid">Error: password cannot be null</div>
                 </div>
                 <div class="form-group">
                     <label for="password">{{ __('title-field.confirm') }}<span class="req">*</span></label>
-                    <input required type="password" id="password" name="confirm_password">
+                    <input required type="password" id="password" name="password">
                     <div class="feed-back is-invalid">Error: password cannot be null</div>
                 </div>
                 <div class="form-footer">
-                    <button>{{ __('button.btn.submit_signup') }}</button>
-                    <a href="{{route('sign-in')}}" class="register_link">{{ __('button.btn.nav_signin') }}</a>
+                    <button>{{ __('button.btn.submit_reset') }}</button>
                 </div>
             </form>
         </div>
